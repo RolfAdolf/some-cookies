@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "some-cookies"
+version = "0.1.0"
+description = ""
+authors = ["Nadir Devrishev <n.devrishev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "*"
+selenium = "^4.9.0"
+pydantic = "^1.10.7"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = [ "tests"]
+python_files = "test*.py"
+addopts = "--cov=some_cookies -rsxX -l --tb=short --strict-markers --doctest-modules"
+xfail_strict = "true"
